@@ -28,13 +28,19 @@
     --font-inter: "Inter", sans-serif; 
     --font-rethink: "Rethink", sans-serif; 
     --font-antro: "AntroVectra", sans-serif; 
+    --color-base: rgb(212, 212, 212); 
+    --color-title: rgb(245, 245, 245); 
+    --color-munsell: rgb(46, 153, 169);
+    --color-gunmetal: rgb(15, 51, 68);
 }
 
 #name {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-:root {
+:root { 
+  background-color: #0e1111;
+  color: rgb(212, 212, 212);
   font-optical-sizing: auto;
   font-style: normal;
   font-synthesis: none;
@@ -43,3 +49,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: oklch(20.5% 0 0);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 4px 16px;
+  position: absolute;
+  left: -20px;
+  top: -36px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
