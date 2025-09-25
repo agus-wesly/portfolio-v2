@@ -30,7 +30,7 @@
     --font-antro: "AntroVectra", sans-serif; 
     --color-base: rgb(212, 212, 212); 
     --color-title: rgb(245, 245, 245); 
-    --color-munsell: rgb(46, 153, 169);
+    --color-munsell: rgb(76, 183, 199);
     --color-gunmetal: rgb(15, 51, 68);
 }
 
@@ -70,4 +70,11 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.layout {
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 91.666667%;
 }
