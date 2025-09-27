@@ -57,11 +57,12 @@
 
 .tooltiptext {
   visibility: hidden;
+  font-size: 0.75rem;
   background-color: oklch(20.5% 0 0);
   color: #fff;
   text-align: center;
   border-radius: 8px;
-  padding: 4px 16px;
+  padding: 4px 10px;
   position: absolute;
   left: 50%;
   top: -36px;
