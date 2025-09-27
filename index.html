@@ -12,13 +12,13 @@
     </div>
     <div class="relative">
         <header>
-            <button id="menu-btn" class="fixed top-4 right-4 bg-neutral-800/70 rounded-lg py-2 px-3 group font-rethink text-sm text-neutral-300 hover:text-neutral-200 transition-colors flex md:hidden items-center justify-center gap-1.5 cursor-pointer min-[570px]:hidden">
+            <button id="menu-btn" class="fixed backdrop-blur-sm  z-[99] top-4 right-4 bg-neutral-800/70 rounded-lg py-2 px-3 group font-rethink text-sm text-neutral-300 hover:text-neutral-200 transition-colors flex md:hidden items-center justify-center gap-1.5 cursor-pointer min-[570px]:hidden">
                 Menu
                 <span class="size-4 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down mt-0.5 size-3.5 text-neutral-500 group-hover:text-neutral-400 transition"><path d="m6 9 6 6 6-6"></path></svg>
                 </span>
             </button>
-            <nav class="left-1/2 -translate-x-1/2 fixed hidden md:flex items-center jusitfy-between gap-4 min-[570px]:flex pointer-events-auto mt-8 px-3 rounded-lg bg-neutral-800/60 w-fit mx-auto text-sm md:text-base">
+            <nav class="z-[99] backdrop-blur-sm left-1/2 -translate-x-1/2 fixed hidden md:flex items-center jusitfy-between gap-4 min-[570px]:flex pointer-events-auto mt-8 px-3 rounded-lg bg-neutral-800/60 w-fit mx-auto text-sm md:text-base">
                 <a href="/" class="py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Home</a>
                 <a href="/" class="py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">About me</a>
                 <a href="/" class="py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Blogs</a>
@@ -232,9 +232,9 @@
                     <div class="rounded-xl border border-neutral-900 bg-neutral-925 flex flex-col justify-between relative overflow-hidden lg:mt-1.5 aspect-auto">
                         <div class="relative h-full">
                             <div class="overflow-hidden h-full">
-                                <div class="min-w-0 shrink-0 basis-full grow">
+                                <div class="min-w-0 shrink-0 basis-full grow h-full">
                                     <div class="flex flex-col justify-between h-full p-6">
-                                        <div class="mt-4">
+                                        <div class="mt-4 h-full">
                                             <p class="text-sm txt-secondary mt-4 leading-relaxed">I highly recommend Agustinus Wesly Sitanggang for any Software Engineer position. I had the pleasure of working closely with Wesly during our time together at PT Len Industri, where he demonstrated exceptional skills and professionalism. He consistently delivered high-quality work that not only met but often exceeded expectations.</p>
                                         </div>
                                         <div class="flex items-center gap-3 mt-10">
@@ -259,7 +259,7 @@
                     <div class="rounded-xl border border-neutral-900 bg-neutral-925 flex flex-col justify-between relative overflow-hidden lg:mt-1.5 aspect-auto">
                         <div class="relative h-full">
                             <div class="overflow-hidden h-full">
-                                <div class="min-w-0 shrink-0 basis-full grow">
+                                <div class="min-w-0 shrink-0 basis-full grow h-full">
                                     <div class="flex flex-col justify-between h-full p-6">
                                         <div class="mt-4">
                                             <p class="text-sm txt-secondary mt-4 leading-relaxed">It is my pleasure to recommend Agustinus Wesly for his exceptional skills and dedication as a Frontend Web Developer. Throughout our professional interaction, Agustinus has consistently impressed me with his proficiency and commitment to delivering high-quality work.</p>
