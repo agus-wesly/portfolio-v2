@@ -62,3 +62,4 @@ function removeClickOutsideListener(el: HTMLElement){
     document.removeEventListener("click", stuff)
 }
 
+(window as any).closeMenuPopover = closeMenuPopover
