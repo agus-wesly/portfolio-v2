@@ -17,13 +17,13 @@
                 <div class="scale-[calc(16/9)] md:scale-90">
                     <div class="flex aspect-square items-center md:aspect-video">
                         <div class="aspect-video w-full">
-                            <div class="" style="padding:56.25% 0 0 0;position:relative;">
-                                   <img src="images/sullyoon.gif" 
+                            <div id="hero-container" style="padding:56.25% 0 0 0;position:relative;">
+                                   <img id="hero-img"
                                     loading="lazy"
                                     fetchpriority="low"
                                     frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                                     referrerpolicy="strict-origin-when-cross-origin" 
-                                    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="buildui.com homepage movie" data-ready="true">
+                                    style="position:absolute;top:0;left:0;width:100%;height:100%;">
                                    </img>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="pointer-events-none absolute z-1 inset-0 flex justify-center">
+    <div class="pointer-events-none absolute -z-10 inset-0 flex justify-center">
         <div class="hidden h-full w-full max-w-7xl grid-cols-3 gap-3.5 px-4 group-has-[[data-hide-gridlines=true]]/body:opacity-0 md:grid">
             <div class="border-x border-white/[0.035]"></div>
             <div class="border-x border-white/[0.035]"></div>
@@ -420,6 +420,7 @@
             </a>
         </div>
     </div>
+    <script type="module" src="./src/popup.ts"></script> 
     <script type="module" src="./src/main.ts"></script> 
   </body>
 </html>
