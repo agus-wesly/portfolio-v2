@@ -84,3 +84,33 @@
 .cursor-newtab {
   cursor: url(/images/new-tab.png) 10 10,pointer;
 }
+
+.fade > * { 
+  animation: fade-in 0.2s ease-in forwards;
+  translate: 0 12px;
+  opacity: 0;
+}
+
+.fade {
+  opacity: 1;
+}
+
+/* The current maximum element is 5, if we want dynamic, 
+ * we should probably use preprocessor
+ * */
+.fade > *:nth-child(1)  { animation-delay: calc(0.2s + 0s);   }
+.fade > *:nth-child(2)  { animation-delay: calc(0.2s + 0.1s); }
+.fade > *:nth-child(3)  { animation-delay: calc(0.2s + 0.2s); }
+.fade > *:nth-child(4)  { animation-delay: calc(0.2s + 0.3s); }
+.fade > *:nth-child(5)  { animation-delay: calc(0.2s + 0.4s); }
+
+@keyframes fade-in {
+    from {
+        translate: 0 12px;
+        opacity: 0;
+    }
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
