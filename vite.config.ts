@@ -23,6 +23,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, "index.html"),
                 blog: resolve(__dirname, "blog.html"),
+                project: resolve(__dirname, "project.html"),
                 ...blogInput
             },
         }
