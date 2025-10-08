@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {  
+    --font-inter: "Inter", sans-serif; 
+    --font-rethink: "Rethink", sans-serif; 
+    --font-antro: "AntroVectra", sans-serif; 
+    --color-base: rgb(212, 212, 212); 
+    --color-title: rgb(245, 245, 245); 
+    --color-munsell: rgb(76, 183, 199);
+    --color-gunmetal: rgb(15, 51, 68);
+}
+
+#article {
+    @apply text-neutral-400 leading-[1.75];
+}
+
+#article h2 {
+    @apply font-bold text-2xl font-rethink capitalize mt-[2em] mb-[1em] inline-block underline text-neutral-300 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
+}
+
+#article p {
+    @apply my-[1.25em];
+}
+
+#article p:first-of-type {
+    @apply my-0;
+}
+
+#article .image-wrapper {
+    @apply overflow-hidden rounded shadow dark:shadow-none mx-auto z-[1] flex justify-center bg-red-200 w-fit;
+    cursor: zoom-in;
+}
+
+#article ol {
+    @apply list-decimal my-[1.25em] pl-[1.625em]
+}
+
+#article li {
+    @apply my-[0.25em]
+}

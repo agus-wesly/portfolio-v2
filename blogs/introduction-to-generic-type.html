@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/blog.css">
+    <title>Introduction To Generic Type | Agustinus Wesly</title>
+  </head>
+  <body class="font-inter relative bg-neutral-950 max-w-screen overflow-x-hidden">
+    <div class="relative">
+        <header>
+            <button id="menu-btn" class="fixed backdrop-blur-sm  z-[99] top-4 right-4 bg-neutral-800/70 rounded-lg py-2 px-3 group font-rethink text-sm text-neutral-300 hover:text-neutral-200 transition-colors flex md:hidden items-center justify-center gap-1.5 cursor-pointer min-[570px]:hidden">
+                Menu
+                <span class="size-4 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down mt-0.5 size-3.5 text-neutral-500 group-hover:text-neutral-400 transition"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+            </button>
+            <nav class="z-[99] backdrop-blur-sm left-1/2 -translate-x-1/2 fixed hidden md:flex items-center jusitfy-between gap-4 min-[570px]:flex pointer-events-auto mt-8 px-3 rounded-lg bg-neutral-800/60 w-fit mx-auto sm:text-base">
+                <a href="/portfolio-v2/#main" class="hover:text-white py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Home</a>
+                <a href="/portfolio-v2/#about-me" class="hover:text-white py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">About me</a>
+                <a href="/portfolio-v2/blog" class="hover:text-white py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Blogs</a>
+                <a href="/portfolio-v2/project" class="hover:text-white py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Projects</a>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <section class="relative" intersect-target>
+            <!--IMAGE OVERLAY-->
+            <div>
+                <div class="overflow-hidden absolute left-0 top-0 z-[-1] h-[16rem] w-full pointer-events-none brightness-30">
+                    <div class="img-blur lg:translate-y-[-20%]" style="position: relative; height: 0px; padding-top: 40%;">
+                        <div class="absolute inset-0 top-1/2">
+                            <img class="w-full -translate-y-1/2" fetchpriority="high" src="https://images.theodorusclarence.com/upload/q_auto,f_auto/theodorusclarence/banner/boliviainteligente-JH3R3eNMsQw-unsplash" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layout pt-32 md:pb-20 md:pt-64">
+                <div class="pb-4">
+                    <h1 class="font-rethink font-bold mt-6 leading-tight text-4xl sm:text-3xl text-neutral-50">The 2024 Retrospective</h1>
+                    <p class="mt-1 text-neutral-400">First Full-Time Year, Solo Travel while Working, Socializing, and more!</p>
+
+                    <div class="mt-12 flex gap-3 items-center">
+                        <div class="size-10 rounded-full overflow-hidden">
+                            <figure class="isolate z-[1] overflow-hidden select-none pointer-events-none object-cover">
+                                <div style="position: relative; height: 0px; padding-top: 100%; cursor: default;">
+                                    <div class="absolute left-0 top-0">
+                                        <img width="350" height="350" alt="wesly" src="https://images.theodorusclarence.com/upload/q_auto,f_auto/theodorusclarence/about/me-2024.jpg"/>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+
+                        <div>
+                            <p class="text-neutral-100">Agustinus Wesly Sitanggang</p>
+                            <p class="text-neutral-400 text-xs mt-0.5">17 Agustus 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="lg:grid lg:grid-cols-[minmax(0,1fr)] lg:gap-8">
+                    <article id="article">
+                        <h2>This is heading</h2>
+                        <p>
+                            We're at the end of the year! Happy New Year 2025! 
+                            This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
+                            Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
+                            it's my first year of working full-time. I had a lot of new experiences. 
+                        </p>
+                        <p>
+                            We're at the end of the year! Happy New Year 2025! 
+                            This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
+                            Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
+                            it's my first year of working full-time. I had a lot of new experiences. 
+                        </p>
+                        <div class="image-wrapper">
+                            <img alt="new-macbook" loading="lazy" width="400" height="420" src="https://images.theodorusclarence.com/upload/q_auto,f_auto/theodorusclarence/blogs/2024-retrospective/new-macbook" />
+                        </div>
+
+                        <p>
+                            We're at the end of the year! Happy New Year 2025! 
+                            This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
+                            Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
+                            it's my first year of working full-time. I had a lot of new experiences. 
+                        </p>
+
+                        <div class="image-wrapper">
+                            <img alt="new-macbook" loading="lazy" width="1000" height="530" src="https://images.theodorusclarence.com/upload/q_auto,f_auto/theodorusclarence/blogs/2024-retrospective/cityscape-of-dubai" />
+                        </div>
+
+                        <p>
+                            We're at the end of the year! Happy New Year 2025! 
+                            This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
+                            Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
+                            it's my first year of working full-time. I had a lot of new experiences. 
+                        </p>
+                        <ol>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ol>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="layout py-16 grid md:grid-cols-[1fr,1.8fr,1fr] gap-8 md:gap-16">
+            <div>
+                <h5 class="font-rethink text-2xl text-white font-bold">Agustinus Wesly Sitanggang</h5>
+                <p class="text-xs mt-3 text-neutral-500">Software developer passionate about building high-quality and reliable software.</p>
+                <div class="flex gap-3 mt-6">
+                    <a target="_blank" href="mailto:agustchannel@gmail.com" class="hover:text-neutral-100 transition-colors text-neutral-300 cursor-newtab tooltip">
+                        <span class="tooltiptext text-sm">Email</span>
+                        <svg stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    </a>
+
+                    <a target="_blank" href="https://github.com/agus-wesly"  class="hover:text-neutral-100 transition-colors text-neutral-300 cursor-newtab tooltip">
+                        <span class="tooltiptext text-sm">Github</span>
+                        <svg stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    </a>
+
+                    <a target="_blank" href="https://id.linkedin.com/in/agustinus-wesly-sitanggang-b6174a238" class="hover:text-neutral-100 transition-colors text-neutral-300 cursor-newtab tooltip">
+                        <span class="tooltiptext text-sm">Linkedin</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Menu Popover-->
+    <div tabindex="0" id="menu-popover" class="z-[50] rounded-xl bg-neutral-800/70 shadow-200 outline-none backdrop-blur-sm p-3 grid gap-2 w-fit max-w-[346px] grid-cols-1 fixed top-0 right-0 -translate-x-4 translate-y-16 pointer-events-none opacity-0 transition duration-300 ease-in-out min-[570px]:hidden">
+        <div class="flex flex-col gap-2 rounded-lg">
+            <a onclick="closeMenuPopover()" href="/portfolio-v2/#main" class="p-3 rounded-xl bg-neutral-900/70 w-full flex items-start gap-3 transition-colors hover:bg-neutral-925/100">
+                <div class="mt-0.5 p-3 bg-neutral-800/70 text-neutral-300 rounded-xl [&>svg]:size-4 [&>svg]:stroke-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="grow">
+                    <div class="font-rethink text-sm flex items-center gap-2 justify-between">
+                        <p>Home</p>
+                    </div>
+                    <div class="text-neutral-400 mt-0.5 text-xs">A fresh start, every time you return here.</div>
+                </div>
+            </a>
+
+            <a onclick="closeMenuPopover()" href="/portfolio-v2/#about-me" class="p-3 rounded-xl bg-neutral-900/70 w-full flex items-start gap-3 transition-colors hover:bg-neutral-925/100">
+                <div class="mt-0.5 p-3 bg-neutral-800/70 text-neutral-300 rounded-xl [&>svg]:size-4 [&>svg]:stroke-1">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"></path><circle cx="12" cy="10" r="4"></circle><circle cx="12" cy="12" r="10"></circle></svg>
+                </div>
+                <div class="grow">
+                    <div class="font-rethink text-sm flex items-center gap-2 justify-between">
+                        <p>About me</p>
+                    </div>
+                    <div class="text-neutral-400 mt-0.5 text-xs">Discover more about my background.</div>
+                </div>
+            </a>
+
+            <a onclick="closeMenuPopover()" href="/portfolio-v2/blog" class="p-3 rounded-xl bg-neutral-900/70 w-full flex items-start gap-3 transition-colors hover:bg-neutral-925/100">
+                <div class="mt-0.5 p-3 bg-neutral-800/70 text-neutral-300 rounded-xl [&>svg]:size-4 [&>svg]:stroke-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
+                </div>
+                <div class="grow">
+                    <div class="font-rethink text-sm flex items-center gap-2 justify-between">
+                        <p>Blogs</p>
+                    </div>
+                    <div class="text-neutral-400 mt-0.5 text-xs">Where I write down stories and reflections.</div>
+                </div>
+            </a>
+
+            <a onclick="closeMenuPopover()" href="/portfolio-v2/project" class="p-3 rounded-xl bg-neutral-900/70 w-full flex items-start gap-3 transition-colors hover:bg-neutral-925/100">
+                <div class="mt-0.5 p-3 bg-neutral-800/70 text-neutral-300 rounded-xl [&>svg]:size-4 [&>svg]:stroke-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pickaxe-icon lucide-pickaxe"><path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3L11 9.999"/><path d="M15.973 4.027A13 13 0 0 0 5.902 2.373c-1.398.342-1.092 2.158.277 2.601a19.9 19.9 0 0 1 5.822 3.024"/><path d="M16.001 11.999a19.9 19.9 0 0 1 3.024 5.824c.444 1.369 2.26 1.676 2.603.278A13 13 0 0 0 20 8.069"/><path d="M18.352 3.352a1.205 1.205 0 0 0-1.704 0l-5.296 5.296a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l5.296-5.296a1.205 1.205 0 0 0 0-1.704z"/></svg>
+                </div>
+                <div class="grow">
+                    <div class="font-rethink text-sm flex items-center gap-2 justify-between">
+                        <p>Projects</p>
+                    </div>
+                    <div class="text-neutral-400 mt-0.5 text-xs">Showcasing the work I’ve built.</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script type="module" src="../src/popup.ts"></script> 
+    <script type="module" src="../src/main.ts"></script> 
+    <script type="module" src="../src/observer.ts"></script> 
+  </body>
+</html>
