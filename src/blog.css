@@ -11,11 +11,15 @@
 }
 
 #article {
-    @apply text-neutral-400 leading-[1.75];
+    @apply text-neutral-400 leading-[1.75] flex flex-col gap-0;
 }
 
 #article h2 {
-    @apply font-bold text-2xl font-rethink capitalize mt-[2em] mb-[1em] inline-block underline text-neutral-300 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
+    @apply font-bold text-[1.5em] font-rethink capitalize mt-[2em] mb-[1em] inline-block underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
+}
+
+#article h3 {
+    @apply font-bold text-[1.25em] font-rethink capitalize mb-[0.6em] underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
 }
 
 #article p {
@@ -32,9 +36,29 @@
 }
 
 #article ol {
-    @apply list-decimal my-[1.25em] pl-[1.625em]
+    @apply list-decimal my-[1.25em] pl-[1.625em] marker:text-neutral-500
+}
+
+#article ul {
+    @apply list-disc my-[1.25em] pl-[1.625em] marker:text-neutral-500
 }
 
 #article li {
-    @apply my-[0.25em]
+    @apply my-[0.5em]
+}
+
+#article a {
+    @apply inline-block underline text-neutral-300 transition-colors decoration-[color-mix(in_srgb,_currentColor_30%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)] cursor-[url(/images/new-tab.png)_10_10,pointer] 
+}
+
+#article code {
+    @apply bg-[#171717] py-[0.25rem] px-[0.375rem] text-[0.875em] font-bold text-neutral-300 text-xs
+}
+
+#article pre {
+    @apply max-w-full overflow-x-auto
+}
+
+#article pre code {
+    @apply bg-transparent
 }

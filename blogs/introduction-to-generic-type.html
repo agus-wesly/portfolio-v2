@@ -61,9 +61,10 @@
                     </div>
                 </div>
 
-                <section class="lg:grid lg:grid-cols-[minmax(0,1fr)] lg:gap-8">
+                <section class="lg:grid lg:grid-cols-[minmax(0,1fr)] lg:gap-8 pb-52">
                     <article id="article">
-                        <h2>This is heading</h2>
+                        <h2>This is heading 2</h2>
+                        <h3>This is heading 3</h3>
                         <p>
                             We're at the end of the year! Happy New Year 2025! 
                             This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
@@ -95,13 +96,29 @@
                             We're at the end of the year! Happy New Year 2025! 
                             This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
                             Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
-                            it's my first year of working full-time. I had a lot of new experiences. 
+                            it's <a href="">my first year of working full-time.</a> I had a lot of new experiences. 
                         </p>
                         <ol>
                             <li>First</li>
                             <li>Second</li>
                             <li>Third</li>
                         </ol>
+                        <ul>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ul>
+                        <p>
+                            We're at the end of the year! Happy New Year 2025! 
+                            This year has been huge for me; it's my first year of working full-time. I had a lot of new experiences. 
+                            Here's how it went! We're at the end of the year! Happy New Year 2025! This year has been huge for me; 
+                            <code>Expected server code bla bla bla</code>
+                        </p>
+
+                        <pre>
+<code>import { renderToString } from 'react-dom/server';</code>
+<code>const html = renderToString(<App />);</code>
+                        </pre>
                     </article>
                 </section>
             </div>
