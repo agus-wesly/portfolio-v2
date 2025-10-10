@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -28,6 +29,7 @@
     --font-inter: "Inter", sans-serif; 
     --font-rethink: "Rethink", sans-serif; 
     --font-antro: "AntroVectra", sans-serif; 
+    --font-garamond: "EB Garamond", sans-serif;
     --color-base: rgb(212, 212, 212); 
     --color-title: rgb(245, 245, 245); 
     --color-munsell: rgb(76, 183, 199);
