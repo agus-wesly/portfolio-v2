@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="../src/blog.css">
-    <title>Introduction To Generic Type | Agustinus Wesly</title>
+    <title>CWS Language | Agustinus Wesly</title>
   </head>
   <body class="font-inter relative bg-neutral-950 max-w-screen overflow-x-hidden">
     <div class="relative">
@@ -25,8 +25,8 @@
         </header>
     </div>
 
-    <main>
-        <section class="relative opacity-0" intersect-target>
+    <main class="opacity-0" intersect-target>
+        <section class="relative">
             <!--IMAGE OVERLAY-->
             <div>
                 <div class="overflow-hidden absolute left-0 top-0 z-[-1] h-[16rem] w-full pointer-events-none">
@@ -41,8 +41,8 @@
 
             <div class="layout pt-32 md:pb-20 md:pt-64">
                 <div class="pb-4">
-                    <h1 class="font-rethink font-bold mt-6 leading-tight text-4xl sm:text-3xl text-neutral-50">Blog title here</h1>
-                    <p class="mt-1 text-neutral-400">Testing content content content</p>
+                    <h1 class="font-rethink font-bold mt-6 leading-tight text-3xl sm:text-5xl text-neutral-50">CWS Language</h1>
+                    <p class="mt-1 text-neutral-400 sm:text-lg">A toy dynamic scripting programming language that uses Indonesian like syntax</p>
 
                     <div class="mt-12 flex gap-3 items-center">
                         <div class="size-10 rounded-full overflow-hidden">
@@ -57,54 +57,111 @@
 
                         <div>
                             <p class="text-neutral-100">Agustinus Wesly Sitanggang</p>
-                            <p class="text-neutral-400 text-xs mt-0.5">17 Agustus 2024</p>
+                            <p class="text-neutral-400 text-xs mt-0.5">19 Juni 2025</p>
                         </div>
                     </div>
                 </div>
 
-                <section class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-8 lg:gap-8 pb-52">
+                <section class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-8 lg:gap-8 pb-20">
                     <article id="article">
-                        <h2>This is heading 2</h2>
-                        <h3>This is heading 3</h3>
+                        <h2>Introduction</h2>
                         <p>
-                            Generic merupakan salah satu fitur pada typescript. 
-                            Generic memungkinkan developer melakukan abstraksi terhadap tipe data dalam typescript.
-                            Tipe data generic ditandai dengan penggunaan Angle Bracket sebagai pembungkus dari suatu type.
+                        I’ve always been fascinated by how interpreters and compilers actually work. They’ve always felt like these mysterious machines that somehow transform our neatly written code into something the computer can understand. So, I decided to dig deeper by building one myself. Fortunately, I stumbled upon <a href="https://craftinginterpreters.com/" target="_blank">this excellent book</a> that teaches exactly that. It’s a well-known resource, often praised and recommended by many in the programming community.
                         </p>
                         <p>
-                            Generic merupakan salah satu fitur pada typescript. 
-                            Generic memungkinkan developer melakukan abstraksi terhadap tipe data dalam typescript.
-                            Tipe data generic ditandai dengan penggunaan Angle Bracket sebagai pembungkus dari suatu type.
+At first, I honestly thought building an interpreter or compiler would be way out of my league. It just sounded impossibly complex (and, to be fair, it kind of is). But I decided to give it a shot anyway and to my surprise, building a very simple one wasn’t nearly as hard as I imagined. Along the way, I discovered a bunch of fascinating concepts about how programming languages actually work. That knowledge has been incredibly valuable for me as an engineer, and I’d genuinely recommend trying it yourself it’s a fun and eye-opening journey! 😄
                         </p>
 
+                        <h2>The Two Versions</h2>
+                        <p>
+The book is divided into two main parts. The first part walks you through building a <strong>Tree-Walk Interpreter</strong> using Java, while the second part explores how to create a <strong>Bytecode Virtual Machine</strong> in C. The main difference between the two lies in performance. The second approach runs much faster, but it also requires a deeper understanding of low-level concepts, which is why it uses C.
+                        </p>
+                        <p>
+I decided to start with the first part of the book. However, I wasn’t too excited about using Java. It feels a bit slow to me, and honestly, I just don’t enjoy working with it. So, I began thinking about alternatives and ended up choosing Go. It’s a language that’s quite popular in the industry, and I figured it would be a good fit for the project. You can check out my implementation of the first part <a href="https://github.com/agus-wesly/ws-lang" target="_blank">here</a>.
+                        </p>
+
+                        <h3>The First Step : Scanning and Representing Code</h3>
+                        <p>
+A compiler or interpreter needs to recognize something called a token. A token is the smallest unit of meaning in a programming language that the interpreter can understand. This includes keywords like <code>if</code>, <code>else</code>, and <code>while</code>, as well as literals such as numbers and strings. The first step in building an interpreter is to break the source code into these tokens, a process known as tokenizing or lexing.
+                        </p>
+                        <p>
+Once we can successfully identify each token, the next step is to transform them into a structured representation. In this case, we use an <strong>Abstract Syntax Tree</strong> (AST). Essentially, it’s a hierarchical model of the code that represents how different parts relate to each other. This structure makes it possible to both evaluate expressions and check whether the syntax is valid. The image below illustrates how an AST can be used to perform a simple arithmetic operation.
+                        </p>
                         <div class="image-wrapper">
-                            <img alt="new-macbook" loading="lazy" width="1000" height="530" 
-                            src="https://jyplevel2storage01.blob.core.windows.net/bbs/b1ae2b779d9f409e8d67752e6f5615dc-%EC%84%A41.jpg" />
+                            <img alt="code-tree" loading="lazy" width="1000" height="530" 
+                            src="https://craftinginterpreters.com/image/representing-code/tree-evaluate.png" />
                         </div>
 
-                        <p>
-                            Generic merupakan salah satu fitur pada typescript. 
-                            Generic memungkinkan developer melakukan abstraksi terhadap tipe data dalam typescript.
-                            Tipe data generic ditandai dengan penggunaan Angle Bracket sebagai pembungkus dari suatu type.
-                            it's <a href="">my first year of working full-time.</a> I had a lot of new experiences. 
-                        </p>
-                        <ol>
-                            <li>First</li>
-                            <li>Second</li>
-                            <li>Third</li>
-                        </ol>
-                        <ul>
-                            <li>First</li>
-                            <li>Second</li>
-                            <li>Third</li>
-                        </ul>
 
-                        <pre>
-<code>import { renderToString } from 'react-dom/server';</code>
-<code>const html = renderToString(<App />);</code>
-                        </pre>
+                        <h3>Parsing & Evaluating Expression</h3>
+                        <p>
+Parsing is the process of transforming a sequence of tokens into a syntax tree. To define how this structure should look, we use something called a grammar. A grammar describes the rules that determine how each node in the syntax tree is formed. Here’s an example of what that might look like:
+                        </p>
+                        <div class="image-wrapper">
+                            <img alt="code-tree" loading="lazy" width="1000" height="530" 
+                            src="https://fpgyfhd7o6.ufs.sh/f/PNqTBXDFYGwut5pciyy28AuTi4e6V3pBNnmRHSIcXkE9hW0P" />
+                        </div>
+                        <p>
+To parse expressions, we can use a technique called <strong>Recursive Descent Parsing</strong>. It works by starting from the highest level of the grammar and then moving down step by step, calling itself recursively along the way. At first, I didn’t really understand how it worked, but once I started implementing it, everything began to make sense.
+                        </p>
+                        <p>
+After we can successfully parse an expression, the next step is to evaluate it. Each type of expression has its own rules for evaluation. Once I finished implementing this part, I realized something interesting, that is even a simple calculator program is essentially a tiny interpreter that only handles expressions. It made me laugh a bit, thinking that I’ve been writing calculators the “wrong” way all this time :D.
+                        </p>
+                        
+                        <h3>Functions</h3>
+                        <p>
+Since the language we’re building is dynamic, functions become a lot more interesting. This is because we have something called a closure, which allows a function to access variables from its outer scope even after the outer function has finished executing.
+                        </p>
+                        <p>
+We solve this by using a chain of environments. When a function is declared, it captures the environment from the point of its declaration. Each environment also holds a reference to its parent or outer environment. Then, when the function is called, it uses the environment that was captured at the time it was defined.
+                        </p>
+
+                        <h2>The Second Version</h2>
+                        <p>
+The second version is a complete rewrite of the first one. This time, instead of using an AST, which is slower and more resource-intensive, we use bytecode along with a virtual machine. This approach is both faster and more efficient, but also more advanced. It requires a language with low-level access like C, since we need to manage memory ourselves. You can find my implementation of this version <a href="https://github.com/agus-wesly/cws-lang" target="_blank">here</a>.
+                        </p>
+                        
+                        <h3>Virtual Machine</h3>
+                        <p>
+A virtual machine, in this context, is simply a program that reads and executes instructions in the form of bytecode. Bytecode itself is a set of instructions represented in bytes (8-bit values, as the name suggests). Instead of building an AST to represent the code, we create an array of bytes that serves as the program’s instructions. This representation is much smaller in size since it only deals with raw bytes, and it’s also faster to execute because we’re processing them directly.
+                        </p>
+
+                        <h3>Hash Map</h3>
+                        <p>
+A hashmap is one of the data structures I use most often, right after arrays. But until now, I never really understood how it worked under the hood. When working with C, we don’t get fancy data structures built in, so we have to create them ourselves. Fortunately, the book covers that topic as well, and it gave me the perfect opportunity to finally learn how a hashmap actually works.
+                        </p>
+
+                        <p>
+A hashmap is basically like an array, except that it uses strings as keys instead of numbers. The problem is that indexing with strings is slow and inefficient. To make it faster, we still want to use numbers for indexing, which means we need a way to convert each string key into a numeric representation.
+                        </p>
+                        <p>
+That’s where the hash function comes in. A hash function takes a string and produces a number based on it. It needs to be stable, meaning it should always return the same number for the same input string. Once we get that number, we use the modulo operator to determine the position where the item should be stored inside the array.
+                        </p>
+                        <p>
+One of the problems you encounter when building a hashmap is a collision, which happens when two different values end up in the same position inside the array. There are two common ways to handle this: <strong>chaining</strong> and <strong>open addressing</strong>. Chaining works by storing multiple items in the same slot, where each item holds a reference to the next one using a linked list. This approach works well, but it requires extra memory to store pointers and introduces some pointer overhead.
+                        </p>
+
+                        <p>
+Open addressing, on the other hand, doesn’t use linked lists. Instead, it stores the item in the next available slot when a collision occurs. The book uses this approach, and it comes with some nice advantages. It’s more memory-efficient and faster since we don’t have to store pointers or deal with pointer overhead. However, it does require extra care, especially when implementing features like deletion in a hashmap.
+                        </p>
+
+                        <h3>Garbage Collection</h3>
+                        <p>
+We use garbage collection (GC) every day. Languages like Python, JavaScript, and Go all rely on it. But before this, I never really understood how it worked behind the scenes. By implementing a garbage collector myself, I was finally able to grasp how it actually manages memory and why it’s such an important part of a language runtime.
+                        </p>
+                        <p>
+Implementing a garbage collector isn’t that difficult if you already understand graph data structures and are comfortable with recursive functions. The real challenge comes during debugging. Throughout development, you’ll often end up freeing memory that’s still in use, which leads to frequent <strong>Segmentation fault (core dumped)</strong> errors. I have to admit, debugging the GC was one of the most frustrating parts of the project 😅.
+                        </p>
+                        <p>
+But despite how difficult implementing and debugging a garbage collector can be, it taught me a lot of valuable lessons. It trained my mind to mentally visualize abstract concepts and improved my focus. I also became more comfortable with debugging which is something I used to avoid. Most importantly, I gained a much deeper understanding of how garbage collection works, its benefits, and the trade-offs that come with it.
+                        </p>
+                        
+                        <h2>Conclusion</h2>
+                        <p>
+                        That’s it! Learning to build your own programming language, even a very simple one, can teach you a lot of new things. It is also a fun and rewarding experience that I really enjoyed. Now I can proudly say that I have built my own language 😁. If you are curious, you can try it out directly in your browser via <a href="https://agus-wesly.github.io/cws-lang/" target="_blank">this link</a>. Thank you for reading, and have a great day! 👋🏻
+                        </p>
                     </article>
-                    
+
                     <aside class="py-4">
                         <div class="sticky top-36">
                             <div class="hidden lg:block">
