@@ -1,0 +1,25 @@
+.show {
+    animation: 0.2s ease-in-out 0s slide-up;
+}
+
+.hide {
+    animation: 0.2s ease-in 0s slide-down;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translate3d(0, 100vh, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        /* transform: translate3d(0, 0, 0); */
+    }
+    100% {
+        transform: translate3d(0, 100vh, 0);
+    }
+}

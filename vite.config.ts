@@ -27,6 +27,7 @@ export default defineConfig({
                 /* In the future we can make project also dynamic ?? */
                 ["projects/cws-language"]: resolve(__dirname, "projects/cws-language.html"),
                 ["projects/raycasting-from-scratch"]: resolve(__dirname, "projects/raycasting-from-scratch.html"),
+                ["test"]: resolve(__dirname, "test.html"),
                 ...blogInput
             },
         }
