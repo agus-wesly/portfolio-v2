@@ -5,6 +5,14 @@ const drawer = document.getElementById("drawer") as HTMLDivElement
 
 const MAX_OFFSET_Y = 200;
 
+function isDrawerDisplayed() {
+    return drawer.style.display === "block";
+}
+
+function isDrawerHide() {
+    return drawer.style.display === "none";
+}
+
 async function show() {
     drawerBg.style.display = "block"
     drawer.style.display = "block"
@@ -46,7 +54,7 @@ drawer.addEventListener("pointerdown", (e) => {
 })
 
 document.addEventListener("pointerup", () => {
-    if (drawer.style.display === "none") return;
+    if (isDrawerHide()) return;
     document.removeEventListener("pointermove", cb)
 
     let timeDiff = Date.now() - t1;
@@ -60,10 +68,10 @@ document.addEventListener("pointerup", () => {
         hide()
     } else {
         drawer.classList.remove("show");
-        drawer.classList.add("back");
+        drawer.classList.add("restore");
 
         const fn = () => {
-            drawer.classList.remove("back");
+            drawer.classList.remove("restore");
             drawer.style.transform = `translate3d(0px, 0px, 0px)`
             drawer.removeEventListener("animationend", fn)
         }
@@ -75,8 +83,10 @@ document.addEventListener("pointerup", () => {
     p1 = 0;
 })
 
+
 document.addEventListener("keydown", (e) => {
-    if (e.code === "Escape") {
+    if (isDrawerDisplayed() && e.code === "Escape") {
         hide()
     }
+    // TODO-2 : hide when clicked outside
 })
