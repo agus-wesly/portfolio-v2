@@ -88,5 +88,8 @@ document.addEventListener("keydown", (e) => {
     if (isDrawerDisplayed() && e.code === "Escape") {
         hide()
     }
-    // TODO-2 : hide when clicked outside
+})
+
+drawerBg.addEventListener("pointerdown", () => {
+    hide();
 })
