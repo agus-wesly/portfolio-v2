@@ -3,6 +3,8 @@ const button = document.getElementById("button") as HTMLButtonElement
 const drawerBg = document.getElementById("drawer-bg") as HTMLDivElement
 const drawer = document.getElementById("drawer") as HTMLDivElement
 
+const MAX_OFFSET_Y = 200;
+
 async function show() {
     drawerBg.style.display = "block"
     drawer.style.display = "block"
@@ -29,32 +31,48 @@ button.addEventListener("click", () => {
     show()
 })
 
-let showMe = false
+let p1: number = 0;
+let t1: number = 0;
+let posDiff: number = 0;
 function cb(e: MouseEvent) {
-    if (!showMe) {
-        console.log("SHOWW", drawer.getBoundingClientRect().top)
-        showMe = true
-    }
-    drawer.style.transform = `translate3d(0px, ${e.clientY}px, 0px)`
+    posDiff = e.clientY - p1;
+    drawer.style.transform = `translate3d(0px, ${posDiff}px, 0px)`
 }
 
-drawer.addEventListener("pointerdown", () => {
+drawer.addEventListener("pointerdown", (e) => {
+    p1 = e.clientY;
+    t1 = Date.now();
     document.addEventListener("pointermove", cb)
 })
 
 document.addEventListener("pointerup", () => {
-    console.log("removing")
-    const translate = window.getComputedStyle(drawer).transform
-    const mtrx = new DOMMatrixReadOnly(translate)
-    const deltaY = mtrx.m42
+    if (drawer.style.display === "none") return;
     document.removeEventListener("pointermove", cb)
 
-    if (deltaY > 200) {
+    let timeDiff = Date.now() - t1;
+    let isHighlySnapped = timeDiff < 150 && posDiff > 0;
+
+    const translate = window.getComputedStyle(drawer).transform
+    const mtrx = new DOMMatrixReadOnly(translate)
+    const posY = mtrx.m42
+    const isBelowOffset = posY > MAX_OFFSET_Y;
+    if (isBelowOffset || isHighlySnapped) {
         hide()
+    } else {
+        drawer.classList.remove("show");
+        drawer.classList.add("back");
+
+        const fn = () => {
+            drawer.classList.remove("back");
+            drawer.style.transform = `translate3d(0px, 0px, 0px)`
+            drawer.removeEventListener("animationend", fn)
+        }
+        drawer.addEventListener("animationend", fn)
     }
 
-    // We also need to find how fast we dropped it
-    // And based on that we can choose to hide
+    t1 = 0;
+    posDiff = 0;
+    p1 = 0;
 })
 
 document.addEventListener("keydown", (e) => {

@@ -6,6 +6,17 @@
     animation: 0.2s cubic-bezier(0.3, 0, 0.1, 1) 0s slide-down;
 }
 
+.back {
+    animation: 0.2s cubic-bezier(0.3, 0, 0.1, 1) 0s slide-up-back;
+}
+
+
+@keyframes slide-up-back {
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 @keyframes slide-up {
     0% {
         transform: translate3d(0, 100vh, 0);
