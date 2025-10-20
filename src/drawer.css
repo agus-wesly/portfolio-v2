@@ -1,9 +1,9 @@
 .show {
-    animation: 0.2s ease-in-out 0s slide-up;
+    animation: 0.2s cubic-bezier(0.3, 0, 0.1, 1) 0s slide-up;
 }
 
 .hide {
-    animation: 0.2s ease-in 0s slide-down;
+    animation: 0.2s cubic-bezier(0.3, 0, 0.1, 1) 0s slide-down;
 }
 
 @keyframes slide-up {

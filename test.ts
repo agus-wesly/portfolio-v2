@@ -39,14 +39,13 @@ function cb(e: MouseEvent) {
 }
 
 drawer.addEventListener("pointerdown", () => {
-    console.log("attaching")
     document.addEventListener("pointermove", cb)
 })
 
 document.addEventListener("pointerup", () => {
     console.log("removing")
     const translate = window.getComputedStyle(drawer).transform
-    const mtrx = new DOMMatrix(translate)
+    const mtrx = new DOMMatrixReadOnly(translate)
     const deltaY = mtrx.m42
     document.removeEventListener("pointermove", cb)
 
