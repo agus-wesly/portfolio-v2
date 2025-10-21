@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/drawer.css">
     <link rel="stylesheet" href="../src/blog-project.css">
     <title>CWS Language | Agustinus Wesly</title>
   </head>
@@ -23,7 +24,40 @@
                 <a href="/portfolio-v2/project" class="hover:text-white py-3 px-2 font-rethink transition-colors text-accent-300 hover:text-accent-300">Projects</a>
             </nav>
         </header>
+
+        <!--TOC Button-->
     </div>
+
+        <button id="button" class="font-rethink group rounded-xl border border-transparent bg-neutral-800/40 backdrop-blur-sm fixed z-10 bottom-5 right-5 lg:hidden py-3 px-3 flex items-center gap-2 transition-opacity duration-300 opacity-100 hover:!opacity-100 width-before-scroll-bar">
+            <span class="text-sm">Table Of Content</span>
+        </button>
+
+        <!--TOC BG-->
+        <div style="display: none;" id="drawer-bg" class="z-[49] fixed inset-0 bg-black/40"></div>
+        <!--TOC Drawer-->
+        <div id="drawer" style="display: none; transform-origin: center top 0px;" id="drawer" class="z-[50] bg-neutral-900/90 backdrop-blur-sm
+            flex flex-col max-h-[96%] rounded-t-[10px] mt-24 fixed -bottom-2 left-0 right-0 px-6 py-4 pb-6 outline-none lg:hidden">
+            <div class="p-4 font-rethink">
+                <div class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-neutral-500 mb-8"></div>
+                <h2 class="font-bold text-neutral-50 text-lg">Table of Contents</h2>
+                <div class="overflow-y-auto scrollable overflow-auto border border-neutral-900 border-none p-0 rounded-none mt-4 max-h-[calc(80vh)]">
+                    <div id="toc-content" class="flex flex-col space-y-2 text-sm">
+                        <a class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300 focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300 text-neutral-400 dark:text-neutral-600">
+                            Introduction
+                        </a>
+                        <a class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300 focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300 text-neutral-400 dark:text-neutral-600">
+                            Creating My First Programming Language
+                        </a>
+                        <a style="margin-left: 16px;" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300 focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300 text-neutral-400 dark:text-neutral-600">
+                            Nested My First Programming Language
+                        </a>
+                        <a class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300 focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300 text-neutral-400 dark:text-neutral-600">
+                            Whatever you like foo bar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <main class="font-garamond">
         <section class="relative">
@@ -255,5 +289,6 @@ But despite how difficult implementing and debugging a garbage collector can be,
     <script type="module" src="../src/popup.ts"></script> 
     <script type="module" src="../src/main.ts"></script> 
     <script type="module" src="../src/observer.ts"></script> 
+    <script type="module" src="../src/drawer.ts"></script> 
   </body>
 </html>
