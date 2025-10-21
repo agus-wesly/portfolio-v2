@@ -57,6 +57,7 @@ let posDifference: number = 0;
 
 function pointerMoveCb(e: MouseEvent) {
     posDifference = e.clientY - initPos;
+    posDifference = Math.max(-8, posDifference)
     drawer.style.transform = `translate3d(0px, ${posDifference}px, 0px)`
 }
 
