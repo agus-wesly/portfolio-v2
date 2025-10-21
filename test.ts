@@ -61,6 +61,10 @@ function pointerMoveCb(e: MouseEvent) {
 }
 
 drawer.addEventListener("pointerdown", (e) => {
+    const targetElement = e.target as Element; 
+    if (targetElement.closest(".scrollable")) {
+        return;
+    }
     initPos = e.clientY;
     initTime = Date.now();
     document.addEventListener("pointermove", pointerMoveCb)
