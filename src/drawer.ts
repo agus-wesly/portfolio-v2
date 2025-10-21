@@ -36,9 +36,22 @@ function hide() {
     drawer.addEventListener("animationend", fn)
 
     drawerBg.style.display = "none"
+    drawer.classList.remove("restore")
+    drawer.classList.remove("show")
+    drawer.classList.add("hide")
+}
+
+function hideInstant() {
+    drawerBg.style.display = "none"
+    drawer.classList.remove("restore")
     drawer.classList.remove("show")
     drawer.classList.add("hide")
 
+    drawer.style.display = "none"
+    drawer.style.transform = `translate3d(0px, 0px, 0px)`
+
+    document.body.style.overflow = "auto"
+    document.body.style.touchAction = "auto"
 }
 
 function restore() {
@@ -110,4 +123,24 @@ document.addEventListener("keydown", (e) => {
 
 drawerBg.addEventListener("pointerdown", () => {
     hide();
+})
+
+
+/* 
+* The Hashchange Handler
+*
+* */
+
+const tocLinks = document.querySelectorAll('[id^="link-"]') as NodeListOf<HTMLAnchorElement>
+
+window.addEventListener("hashchange", () => {
+    hideInstant()
+    tocLinks.forEach(el => {
+        const curr_hash = new URL(el.href).hash
+        if (curr_hash === window.location.hash) {
+            el.style.color = "#e5e5e5"
+        } else {
+            el.style.color = "#525252"
+        }
+    })
 })

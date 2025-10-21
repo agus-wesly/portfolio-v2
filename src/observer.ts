@@ -12,7 +12,6 @@ elements.forEach(el => {
 function onIntersect(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            console.log("test")
             entry.target.classList.add("fade")
         } 
     })
