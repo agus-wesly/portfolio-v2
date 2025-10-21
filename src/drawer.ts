@@ -20,13 +20,17 @@ async function show() {
     drawer.classList.add("show")
 
     document.body.style.overflow = "hidden"
+    document.body.style.touchAction = "none"
 }
 
 function hide() {
     const fn = () => {
         drawer.style.display = "none"
         drawer.style.transform = `translate3d(0px, 0px, 0px)`
+
         document.body.style.overflow = "auto"
+        document.body.style.touchAction = "auto"
+
         drawer.removeEventListener("animationend", fn)
     }
     drawer.addEventListener("animationend", fn)
@@ -58,14 +62,12 @@ let initTime: number = 0;
 let posDifference: number = 0;
 
 function pointerMoveCb(e: MouseEvent) {
-    console.log("pointermove")
     posDifference = e.clientY - initPos;
     posDifference = Math.max(-8, posDifference)
     drawer.style.transform = `translate3d(0px, ${posDifference}px, 0px)`
 }
 
 drawer.addEventListener("pointerdown", (e) => {
-    console.log("pointerdown")
     const targetElement = e.target as Element; 
     if (targetElement.closest(".scrollable")) {
         return;
@@ -75,12 +77,7 @@ drawer.addEventListener("pointerdown", (e) => {
     document.addEventListener("pointermove", pointerMoveCb)
 })
 
-document.addEventListener("pointercancel", () => {
-    console.log("pointercancel")
-})
-
 document.addEventListener("pointerup", () => {
-    console.log("pointerup")
     if (isDrawerHide()) return;
     document.removeEventListener("pointermove", pointerMoveCb)
 
