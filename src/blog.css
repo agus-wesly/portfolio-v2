@@ -11,15 +11,15 @@
 }
 
 #article {
-    @apply text-neutral-200 leading-[1.75] flex flex-col gap-0 md:text-[1.4rem];
+    @apply text-neutral-200 leading-[1.75] flex flex-col gap-0 text-lg md:text-xl;
 }
 
 #article h2 {
-    @apply font-bold text-[1.5em] capitalize my-[0.75em] inline-block underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
+    @apply font-bold text-3xl sm:text-4xl capitalize my-[0.75em] inline-block underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
 }
 
 #article h3 {
-    @apply font-bold text-[1.25em] capitalize my-[0.55em] underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
+    @apply font-bold text-2xl sm:text-3xl  capitalize my-[0.55em] underline text-neutral-100 transition-colors decoration-[color-mix(in_srgb,_currentColor_0%,_#171717)] hover:decoration-current focus:decoration-current active:decoration-[color-mix(in_srgb,_currentColor_65%,_#171717)];
 }
 
 #article p {
