@@ -81,7 +81,7 @@ function pointerMoveCb(e: MouseEvent) {
 }
 
 drawer.addEventListener("pointerdown", (e) => {
-    const targetElement = e.target as Element; 
+    const targetElement = e.target as Element;
     if (targetElement.closest(".scrollable")) {
         return;
     }
@@ -101,9 +101,9 @@ document.addEventListener("pointerup", () => {
     const mtrx = new DOMMatrixReadOnly(translate)
     const posY = mtrx.m42
 
-    const yOffset = 0.25*drawer.offsetHeight;
+    const yOffset = 0.25 * drawer.offsetHeight;
     const isBelowOffset = posY > yOffset;
-    if (isBelowOffset || isHighlySnapped) { 
+    if (isBelowOffset || isHighlySnapped) {
         hide()
     } else {
         restore()
@@ -126,21 +126,96 @@ drawerBg.addEventListener("pointerdown", () => {
 })
 
 
+
+
+
 /* 
 * The Hashchange Handler
 *
 * */
+{
+    const allElements: Array<Element> = []
 
-const tocLinks = document.querySelectorAll('[id^="link-"]') as NodeListOf<HTMLAnchorElement>
+    const h2List = document.querySelectorAll("article h2");
+    const h3List = document.querySelectorAll("article h3");
 
-window.addEventListener("hashchange", () => {
-    hideInstant()
-    tocLinks.forEach(el => {
-        const curr_hash = new URL(el.href).hash
-        if (curr_hash === window.location.hash) {
-            el.style.color = "#e5e5e5"
-        } else {
-            el.style.color = "#525252"
-        }
+    const set: Set<Element> = new Set();
+
+    h2List.forEach(el => {
+        allElements.push(el)
     })
-})
+    h3List.forEach(el => {
+        allElements.push(el)
+    })
+
+    const observer = new IntersectionObserver(onIntersect, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0,
+    })
+
+    function makeEntryActive(entry: Element | undefined) {
+        if (!entry) return
+        for (let i = 0; i < allElements.length; ++i) {
+            const current = allElements[i];
+            const linkInDrawer = document.querySelector(`#link-${current.id}`) as HTMLAnchorElement | null
+            const linkInAside = document.querySelector(`aside #link-${current.id}`) as HTMLAnchorElement | null;
+            if (current === entry) {
+                if (linkInAside)
+                    linkInAside.style.color = "#e5e5e5"
+                if (linkInDrawer)
+                    linkInDrawer.style.color = "#e5e5e5"
+            } else {
+                if (linkInAside)
+                    linkInAside.style.color = "#525252"
+                if (linkInDrawer)
+                    linkInDrawer.style.color = "#525252"
+            }
+        }
+    }
+
+    function onIntersect(entries: IntersectionObserverEntry[]) {
+        for (let i = 0; i < entries.length; ++i) {
+            const entry = entries[i];
+            if (entry.isIntersecting) {
+                set.add(entry.target)
+            } else {
+                set.delete(entry.target)
+            }
+            const sorted = Array.from(set).sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)
+            makeEntryActive(sorted[0])
+        }
+    }
+    allElements.forEach(el => {
+        observer.observe(el)
+    })
+}
+
+{
+    /* 
+    * The Hashchange Handler
+    *
+    * */
+    const tocInDrawer = document.querySelectorAll('[id^="link-"]') as NodeListOf<HTMLAnchorElement>
+    const tocInAside = document.querySelectorAll('aside [id^="link-"]') as NodeListOf<HTMLAnchorElement>
+    const toc = [...tocInDrawer, ...tocInAside]
+
+    function updateHash() {
+        hideInstant()
+        toc.forEach(el => {
+            const curr_hash = new URL(el.href).hash
+            if (curr_hash === window.location.hash) {
+                el.style.color = "#e5e5e5"
+            } else {
+                el.style.color = "#525252"
+            }
+        })
+
+    }
+
+    window.addEventListener("hashchange", updateHash)
+
+    document.body.onload = () => {
+        updateHash()
+    }
+}
