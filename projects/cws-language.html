@@ -51,25 +51,43 @@
                             The Two Versions
                         </a>
                         <a id="link-the-first-step" href="#the-first-step" style="margin-left: 16px;" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
-                            The First Step
+                            The First Step : Scanning And Representing Code
+                        </a>
+                        <a id="link-parsing-and-evaluating-expression" style="margin-left: 16px;" href="#parsing-and-evaluating-expression" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Parsing And Evaluating Expression
+                        </a>
+                        <a id="link-functions" style="margin-left: 16px;" href="#functions" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Functions
                         </a>
                         <a id="link-the-second-version" href="#the-second-version" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
                             The Second Version
+                        </a>
+                        <a id="link-virtual-machine" style="margin-left: 16px;" href="#virtual-machine" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Virtual Machine
+                        </a>
+                        <a id="link-hashmap" style="margin-left: 16px;" href="#hashmap" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Hash Map
+                        </a>
+                        <a id="link-garbage-collection" style="margin-left: 16px;" href="#garbage-collection" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Garbage Collection
+                        </a>
+                        <a id="link-conclusion" href="#conclusion" class="cursor-pointer text-sm font-rethink transition-colors font-medium hover:text-neutral-700 focus:outline-none hover:text-neutral-300 focus-visible:text-neutral-300 text-neutral-600">
+                            Conclusion
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-    <main class="font-garamond">
-        <section class="relative">
-            <!--IMAGE OVERLAY-->
-            <div>
-                <div class="overflow-hidden absolute left-0 top-0 z-[-1] h-[16rem] w-full pointer-events-none">
-                    <div class="img-blur lg:translate-y-[-20%]" style="position: relative; height: 0px; padding-top: 40%;">
-                        <div class="absolute inset-0 top-1/2">
-                            <img class="w-full -translate-y-1/2" fetchpriority="high" src="https://img.freepik.com/premium-photo/sunset-mountain-lake_1410957-46325.jpg?semt=ais_incoming&w=740&q=80" />
-                        </div>
+        <main class="font-garamond">
+            <section class="relative">
+                <!--IMAGE OVERLAY-->
+                <div>
+                    <div class="overflow-hidden absolute left-0 top-0 z-[-1] h-[16rem] w-full pointer-events-none">
+                        <div class="img-blur lg:translate-y-[-20%]" style="position: relative; height: 0px; padding-top: 40%;">
+                            <div class="absolute inset-0 top-1/2">
+                                <img class="w-full -translate-y-1/2" fetchpriority="high" src="https://img.freepik.com/premium-photo/sunset-mountain-lake_1410957-46325.jpg?semt=ais_incoming&w=740&q=80" />
+                            </div>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-[16rem] w-full bg-gradient-to-b from-neutral-950/60 to-neutral-950 z-[-1]"></div>
@@ -129,7 +147,7 @@ Once we can successfully identify each token, the next step is to transform them
                         </div>
 
 
-                        <h3 id="parsing-&-evaluating-expression">Parsing & Evaluating Expression</h3>
+                        <h3 id="parsing-and-evaluating-expression">Parsing & Evaluating Expression</h3>
                         <p>
 Parsing is the process of transforming a sequence of tokens into a syntax tree. To define how this structure should look, we use something called a grammar. A grammar describes the rules that determine how each node in the syntax tree is formed. Here’s an example of what that might look like:
                         </p>
@@ -162,7 +180,7 @@ The second version is a complete rewrite of the first one. This time, instead of
 A virtual machine, in this context, is simply a program that reads and executes instructions in the form of bytecode. Bytecode itself is a set of instructions represented in bytes (8-bit values, as the name suggests). Instead of building an AST to represent the code, we create an array of bytes that serves as the program’s instructions. This representation is much smaller in size since it only deals with raw bytes, and it’s also faster to execute because we’re processing them directly.
                         </p>
 
-                        <h3 id="hash-map">Hash Map</h3>
+                        <h3 id="hashmap">Hash Map</h3>
                         <p>
 A hashmap is one of the data structures I use most often, right after arrays. But until now, I never really understood how it worked under the hood. When working with C, we don’t get fancy data structures built in, so we have to create them ourselves. Fortunately, the book covers that topic as well, and it gave me the perfect opportunity to finally learn how a hashmap actually works.
                         </p>
@@ -201,30 +219,66 @@ But despite how difficult implementing and debugging a garbage collector can be,
                     <aside class="py-4">
                         <div class="sticky top-36">
                             <div class="max-h-[calc(100vh-9rem-113px)] overflow-auto border border-neutral-900 px-6 rounded-xl py-5 hidden lg:block">
-                                <div class="flex flex-col space-y-2 text-sm">
-                                    <a id="link-introduction" href="#introduction" class="text-sm font-rethink transition-colors font-medium
+                                <div class="flex flex-col space-y-2">
+                                    <a id="link-introduction" href="#introduction" class="font-rethink transition-colors font-medium
                                         hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
                                         focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
                                         text-neutral-900 dark:text-neutral-300">
                                         Introduction
                                     </a>
-                                    <a  id="link-the-two-versions" href="#the-two-versions" class="text-sm font-rethink transition-colors font-medium
+                                    <a  id="link-the-two-versions" href="#the-two-versions" class="font-rethink transition-colors font-medium
                                         hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
                                         focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
                                         text-neutral-900 dark:text-neutral-600">
                                         The Two Versions
                                     </a>
-                                    <a id="link-the-first-step" style="margin-left: 16px;" href="#the-first-step" class="text-sm font-rethink transition-colors font-medium
+                                    <a id="link-the-first-step" style="margin-left: 16px;" href="#the-first-step" class="font-rethink transition-colors font-medium
                                         hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
                                         focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
                                         text-neutral-900 dark:text-neutral-600">
-                                        The First Step
+                                        The First Step : Scanning And Representing Code
                                     </a>
-                                    <a id="link-the-second-version" href="#the-second-version" class="text-sm font-rethink transition-colors font-medium
+                                    <a id="link-parsing-and-evaluating-expression" style="margin-left: 16px;" href="#parsing-and-evaluating-expression" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Parsing And Evaluating Expression
+                                    </a>
+                                    <a id="link-functions" style="margin-left: 16px;" href="#functions" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Functions
+                                    </a>
+                                    <a id="link-the-second-version" href="#the-second-version" class="font-rethink transition-colors font-medium
                                         hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
                                         focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
                                         text-neutral-900 dark:text-neutral-600">
                                         The Second Version
+                                    </a>
+                                    <a id="link-virtual-machine" style="margin-left: 16px;" href="#virtual-machine" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Virtual Machine
+                                    </a>
+                                    <a id="link-hashmap" style="margin-left: 16px;" href="#hashmap" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Hash Map
+                                    </a>
+                                    <a id="link-garbage-collection" style="margin-left: 16px;" href="#garbage-collection" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Garbage Collection
+                                    </a>
+                                    <a id="link-conclusion" href="#conclusion" class="font-rethink transition-colors font-medium
+                                        hover:text-neutral-700 focus:outline-none dark:hover:text-neutral-300
+                                        focus-visible:text-neutral-700 dark:focus-visible:text-neutral-300
+                                        text-neutral-900 dark:text-neutral-600">
+                                        Conclusion
                                     </a>
                                 </div>
                             </div>
