@@ -36,7 +36,7 @@ function hide() {
     drawer.addEventListener("animationend", fn)
 
     drawerBg.style.display = "none"
-    drawer.classList.remove("restore")
+    // drawer.classList.remove("restore")
     drawer.classList.remove("show")
     drawer.classList.add("hide")
 }
